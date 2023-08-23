@@ -1,15 +1,22 @@
+---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
- name: che-tls
- namespace: che
+  name: che-tls
+  namespace: che
 spec:
   secretName: che-tls
-  duration: 2160h # Certificate validity period (6 months)
-  renewBefore: 360h # Renew the certificate 10 days before expiry
+  duration: 2160h
+  renewBefore: 360h
   commonName: eclipse.gosimplyee.info
   dnsNames:
     - eclipse.gosimplyee.info
   issuerRef:
     name: che-certificate-issuer
-    kind: ClusterIssuer  
+    kind: ClusterIssuer
+  acme:
+    config:
+      - dns01:
+          provider: route53
+        domains:
+          - "*.eclipse.mydomain.com"
