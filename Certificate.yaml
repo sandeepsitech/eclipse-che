@@ -5,8 +5,11 @@ metadata:
  namespace: che
 spec:
   secretName: che-tls
+  duration: 2160h # Certificate validity period (6 months)
+  renewBefore: 360h # Renew the certificate 10 days before expiry
+  commonName: eclipse.gosimplyee.info
   dnsNames:
-    - '*.eclipse.gosimplyee.info'
+    - eclipse.gosimplyee.info
   issuerRef:
     name: che-certificate-issuer
-    kind: ClusterIssuer
+    kind: ClusterIssuer  
