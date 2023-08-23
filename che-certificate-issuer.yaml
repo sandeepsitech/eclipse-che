@@ -4,15 +4,16 @@ metadata:
   name: che-certificate-issuer
 spec:
   acme:
-    dns01:
-      providers:
-      - route53:
-          region: eu-west-1
-          accessKeyID: AKIAW6ZEG6GJTID33KP5
-          secretAccessKeySecretRef:
-            name: aws-cert-manager-access-key
-            key: CLIENT_SECRET
-        name: route53
+	solvers
+	  - dns01:
+		  providers:
+		  - route53:
+			  region: eu-west-1
+			  accessKeyID: AKIAW6ZEG6GJTID33KP5
+			  secretAccessKeySecretRef:
+				name: aws-cert-manager-access-key
+				key: CLIENT_SECRET
+			name: route53
     email: sandeepsinghitech@outlook.com
     privateKeySecretRef:
       name: letsencrypt
