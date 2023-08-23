@@ -10,9 +10,3 @@ spec:
   issuerRef:
     name: che-certificate-issuer
     kind: ClusterIssuer
-  acme:
-    config:
-      - dns01:
-          provider: route53
-        domains:
-         - '*.eclipse.gosimplyee.info'
