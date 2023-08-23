@@ -4,15 +4,15 @@ metadata:
  name: che-tls
  namespace: che
 spec:
- secretName: che-tls
- issuerRef:
-   name: che-certificate-issuer
-   kind: ClusterIssuer
- dnsNames:
-   - '*.eclipse.gosimplyee.info'
- acme:
-   config:
-     - dns01:
-         provider: route53
-       domains:
+  secretName: che-tls
+  dnsNames:
+    - '*.eclipse.gosimplyee.info'
+  issuerRef:
+    name: che-certificate-issuer
+    kind: ClusterIssuer
+  acme:
+    config:
+      - dns01:
+          provider: route53
+        domains:
          - '*.eclipse.gosimplyee.info'
