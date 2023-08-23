@@ -19,4 +19,4 @@ spec:
       - dns01:
           provider: route53
         domains:
-          - "*.eclipse.mydomain.com"
+          - "*.eclipse.gosimplyee.info"
