@@ -4,7 +4,7 @@ metadata:
  name: che-tls
  namespace: cert-manager
 spec:
- secretName: aws-cert-manager-access-key
+ secretName: che-tls
  issuerRef:
    name: che-certificate-issuer
    kind: ClusterIssuer
