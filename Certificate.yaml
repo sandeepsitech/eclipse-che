@@ -1,15 +1,12 @@
-apiVersion: cert-manager.io/v1
+apiVersion: certmanager.k8s.io/v1
 kind: Certificate
 metadata:
-  name: che-tls
-  namespace: che
+ name: che-tls
+ namespace: che
 spec:
-  secretName: che-tls
-  duration: 2160h
-  renewBefore: 360h
-  commonName: eclipse.mydomain.com
-  dnsNames:
-    - eclipse.mydomain.com
-  issuerRef:
-    name: che-certificate-issuer
-    kind: ClusterIssuer
+ secretName: che-tls
+ issuerRef:
+   name: che-certificate-issuer
+   kind: ClusterIssuer
+ dnsNames:
+   - '*.eclipse.mydomain.com'
