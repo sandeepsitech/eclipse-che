@@ -9,4 +9,4 @@ spec:
    name: che-certificate-issuer
    kind: ClusterIssuer
  dnsNames:
-   - '*.eclipse.mydomain.com'
+   - '*.eclipse.gosimplyee.info'
