@@ -3,14 +3,14 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: che-tls
-  namespace: cert-manager
+  namespace: che
 spec:
   secretName: che-tls
   duration: 2160h
   renewBefore: 360h
-  commonName: eclipse.gosimplyee.info
+  commonName: *.eclipse.mydomain.com
   dnsNames:
-    - eclipse.gosimplyee.info
+    - *.eclipse.mydomain.com
   issuerRef:
     name: che-certificate-issuer
     kind: ClusterIssuer
