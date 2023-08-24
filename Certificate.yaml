@@ -9,7 +9,7 @@ spec:
   renewBefore: 360h
   commonName: eclipse.mydomain.com
   dnsNames:
-    - *.eclipse.mydomain.com
+    - eclipse.mydomain.com
   issuerRef:
     name: che-certificate-issuer
     kind: ClusterIssuer
